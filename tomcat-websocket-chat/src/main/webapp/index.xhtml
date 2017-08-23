@@ -2,7 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Prueba</title>
-    <script type="application/javascript"><![CDATA[
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("input[name=nombre1]").click(function(){
+				alert('Evento click sobre un input text con nombre="nombre1"');
+			});
+   		});
+	</script>
+	
+	
+    <script type="application/javascript">
+     
+    <![CDATA[
         var persona={"nombre":"pedro","apellidoPaterno":"perez"};
  
 		$.ajax({
@@ -18,6 +30,11 @@
 <body>
 
 Hola Mundo
+
+<form name="form" action="javascript:void(0)" method="POST">
+	<input type="text" name="nombre1" size="40"></input>
+	<INPUT type="submit" name="enviar" value="Enviar"/>
+</form>
 
 </body>
 </html>
