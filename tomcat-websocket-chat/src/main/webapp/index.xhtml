@@ -9,43 +9,42 @@
 				alert('Evento click sobre un input text con nombre="nombre1"');
 			});
 
-			$("button[name=submit]").click(function(){
-				alert('SUBMIT');
-			});
-
-			$( "#formId" ).submit(function( event ) {
-				  alert( "Handler for .submit() called." );
-				  event.preventDefault();
+			$( "#formId" ).submit(function(event) {
+				var persona={"nombre":"pedro","apellidoPaterno":"perez"};
+				 
+				$.ajax({
+					url: "rest/servicioPersonas/personas",
+					type: "POST",
+					data: JSON.stringify(persona),
+					contentType: "application/json",
+					complete: resultado,
+					success:function(data, textStatus, jqXHR) 
+			        {
+						alert('Success');
+			        },
+			        error: function(jqXHR, textStatus, errorThrown) 
+			        {
+			        	alert('Error');    
+			        }
 				});
+				//event.preventDefault();
+				//e.unbind(); //unbind. to stop multiple form submit.
+			});
    		});
 	</script>
-	
-	
-    <script type="application/javascript">
-     
-    <![CDATA[
-        var persona={"nombre":"pedro","apellidoPaterno":"perez"};
- 
-		$.ajax({
-			url: "rest/servicioPersonas/personas",
-			type: "POST",
-			data: JSON.stringify(persona),
-			contentType: "application/json",
-			complete: resultado
-		});
-
-    ]]></script>
 </head>
+
 <body>
 
-Hola Mundo
-
-<form name="form" action="javascript:void(0)" method="POST" id="formId">
-	<input type="text" name="nombre1" size="40"></input>
-	<input type="submit" value="Clic"/>
-</form>
-
-<button type="submit" form="form" name="submit" value="Enviar" />
-
+<div align="center">
+ 
+ Hola Mundo
+ 
+ 
+	<form name="form" action="javascript:void(0)" method="POST" id="formId">
+		<input type="text" name="nombre1" size="40"></input>
+		<input type="submit" value="Clic"/>
+	</form>
+</div>
 </body>
 </html>
