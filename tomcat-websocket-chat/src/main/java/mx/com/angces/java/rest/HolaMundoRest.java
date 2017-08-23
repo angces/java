@@ -5,6 +5,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import mx.com.angces.java.DTO.Persona;
@@ -26,8 +27,8 @@ public class HolaMundoRest {
   @GET
   @Path("/personas")
   @Produces("text/html")
-  public String metodoGET() {
+  public String metodoGET(@QueryParam("numero") String nombre) {
   System.out.println("----------HOLA, este es un método GET----------"); 
-  return "<html lang=\"en\"><body><h1>Hola Mundo!!</h1></body></html>";
+  return "<html lang=\"en\"><body><h1>Hola " + nombre + "!!</h1></body></html>";
   }
 }
