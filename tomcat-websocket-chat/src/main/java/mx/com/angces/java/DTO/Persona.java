@@ -1,9 +1,16 @@
 package mx.com.angces.java.DTO;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Persona {
 
+	@JsonProperty
 	private String nombre;
+	
+	@JsonProperty
 	private String apellidoPaterno;
+	
+	@JsonProperty
 	private String apellidoMaterno;
 	
 	public String getNombre() {
