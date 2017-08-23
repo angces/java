@@ -17,8 +17,8 @@ public class HolaMundoRest {
  
   @POST
   @Path("/personas")
-  @Produces("application/json")
-  @Consumes(MediaType.APPLICATION_JSON)
+  @Consumes("application/json")
+  @Produces(MediaType.APPLICATION_JSON)
   public void metodoPOST(Persona persona) {
   System.out.println("----------HOLA, este es un método POST----------"); 
   System.out.println(persona.getNombre() + " " + persona.getApellidoPaterno());
@@ -27,7 +27,7 @@ public class HolaMundoRest {
   @GET
   @Path("/personas")
   @Produces("text/html")
-  public String metodoGET(@QueryParam("numero") String nombre) {
+  public String metodoGET(@QueryParam("nombre") String nombre) {
   System.out.println("----------HOLA, este es un método GET----------"); 
   return "<html lang=\"en\"><body><h1>Hola " + nombre + "!!</h1></body></html>";
   }
