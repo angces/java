@@ -8,6 +8,15 @@
 			$("input[name=nombre1]").click(function(){
 				alert('Evento click sobre un input text con nombre="nombre1"');
 			});
+
+			$("button[name=submit]").click(function(){
+				alert('SUBMIT');
+			});
+
+			$( "#formId" ).submit(function( event ) {
+				  alert( "Handler for .submit() called." );
+				  event.preventDefault();
+				});
    		});
 	</script>
 	
@@ -31,10 +40,12 @@
 
 Hola Mundo
 
-<form name="form" action="javascript:void(0)" method="POST">
+<form name="form" action="javascript:void(0)" method="POST" id="formId">
 	<input type="text" name="nombre1" size="40"></input>
-	<INPUT type="submit" name="enviar" value="Enviar"/>
+	<input type="submit" value="Clic"/>
 </form>
+
+<button type="submit" form="form" name="submit" value="Enviar" />
 
 </body>
 </html>
