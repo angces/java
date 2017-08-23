@@ -1,5 +1,8 @@
 package mx.com.angces.java.DTO;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Persona {
 
 	private String nombre;
