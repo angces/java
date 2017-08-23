@@ -10,6 +10,7 @@
 			});
 
 			$( "#formId" ).submit(function(event) {
+				alert('Submit');
 				var persona={"nombre":"pedro","apellidoPaterno":"perez"};
 				 
 				$.ajax({
@@ -17,7 +18,7 @@
 					type: "POST",
 					data: JSON.stringify(persona),
 					contentType: "application/json",
-					complete: resultado,
+					//complete: resultado,
 					success:function(data, textStatus, jqXHR) 
 			        {
 						alert('Success');
@@ -41,7 +42,7 @@
  Hola Mundo
  
  
-	<form name="form" action="javascript:void(0)" method="POST" id="formId">
+	<form name="form" action="javascript:void(0)" id="formId">
 		<input type="text" name="nombre1" size="40"></input>
 		<input type="submit" value="Clic"/>
 	</form>
